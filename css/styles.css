@@ -14,7 +14,7 @@ h1{
     margin: 0;
 }
 h2{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin: 0;
 }
@@ -100,6 +100,10 @@ h2{
 .article-container:nth-child(even){
     flex-direction: row-reverse;
     margin-top: 5rem;
+}
+.article-container img{
+    width: 50%;
+    object-fit: cover;
 }
 .article-details{
     display: flex;
@@ -245,4 +249,97 @@ button{
 button:hover{
     opacity: 0.8;
     transform: scale(1.1);
+}
+/*Responsive*/
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    h1{
+        font-size: 3.5rem;
+    }
+    h2{
+        font-size: 2.5rem !important;
+    }
+    .container{
+        padding: 5rem 4rem;
+    }
+    #presentation-container{
+        padding: 5rem 4rem;
+    }
+    .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #clients .grid-container-clients{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);    
+        grid-template-columns: auto !important;
+        text-align: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    #clients .grid-container-clients .col{
+        grid-area: auto !important;
+    }
+
+}
+@media only screen and (max-width: 767px) {
+    h1{
+        font-size: 2.5rem;
+    }
+    h2{
+        font-size: 2.5rem !important;
+    }
+    #presentation-container{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-container{
+        grid-template-columns: 1fr !important;
+    }
+    #red-box .qualities{
+        flex-direction: column;
+    }
+    #red-box .qualities img{
+        transform: rotate(90deg);
+        margin: 2.5rem 0;
+    }
+    .article-container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .article-container:nth-child(even){
+        flex-direction: column-reverse;
+    }
+    .article-container .article-details{
+        text-align: center;
+        align-items: center;
+        margin: 2rem 0 0 0;
+    }
+    .article-container:nth-child(even) > .article-details{
+        text-align: center;
+        align-items: center;
+        margin: 2rem 0 0 0;
+    }
+    .article-container img{
+        width: 100%;
+    }
+    #clients .grid-container-clients{
+        grid-template-columns: 1fr !important;    
+    }
+    #clients .grid-container-clients .col{
+        height: 6rem;
+        grid-area: auto !important;
+    }
+    .footer-list{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-list > ul{
+        margin-top: 3rem;
+    }
+    .footer-list > ul:first-child{
+        margin-top: 0;
+    }
+    .copy-social{
+        flex-direction: column-reverse;
+    }
 }
